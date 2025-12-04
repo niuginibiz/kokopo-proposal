@@ -8,78 +8,132 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            /* Light gray background for contrast */
+            background-color: #f8fafc; 
             color: #1f2937;
         }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        /* Dark Blue/Deep Indigo is the primary color based on the mockup's background */
+        .primary-dark {
+            background-color: #1e3a8a; /* Blue-900 */
+        }
+        /* Vibrant accent color for icons, highlights, and the logo's active elements */
+        .accent-blue {
+            color: #3b82f6; /* Blue-500 */
+        }
+        
         .section-header {
-            @apply text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 border-b-2 pb-2 border-blue-100;
+            /* Updated to use a larger font and align with the mockup's style */
+            @apply text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 pb-2;
+        }
+
+        /* Style for the decorative triangle used in the mockup */
+        .triangle-down {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #1e3a8a; /* Match the dark block color */
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header: Match the mockup's top navigation bar -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="text-3xl font-extrabold text-gray-900">
-                <span class="text-blue-600">NBZ</span> Tech
+            <!-- NBZ Logo Placeholder (Using the white/blue on dark aesthetic) -->
+            <div class="flex items-center">
+                <!-- SVG placeholder mimicking the style of the NBZ logo: White and sharp blue -->
+                <svg width="40" height="40" viewBox="0 0 100 100" class="mr-2">
+                    <polygon points="5 50, 50 5, 95 50, 50 95" fill="#1e3a8a"/>
+                    <text x="50" y="60" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" text-anchor="middle">N</text>
+                    <text x="50" y="85" font-family="Arial, sans-serif" font-size="20" fill="#3b82f6" text-anchor="middle">BZ</text>
+                </svg>
+                <div class="text-3xl font-extrabold text-gray-900">
+                    <span class="text-blue-600">NBZ</span> Tech
+                </div>
             </div>
-            <nav class="hidden md:flex space-x-6">
+            <nav class="hidden md:flex space-x-6 items-center">
                 <a href="#investment" class="text-gray-600 hover:text-blue-600 font-medium">Investment Rationale</a>
                 <a href="#branding" class="text-gray-600 hover:text-blue-600 font-medium">Custom Branding</a>
                 <a href="#specs" class="text-gray-600 hover:text-blue-600 font-medium">Product Details</a>
-                <a href="#contact" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Discuss Proposal</a>
+                <a href="#contact" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg">Discuss Proposal</a>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
 
-        <!-- Hero Section: Formal Address -->
-        <section class="bg-white p-10 md:p-16 rounded-xl shadow-2xl mb-16 text-center">
-            <p class="text-lg text-gray-500 mb-4">A Strategic Proposal to</p>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-blue-800 mb-6 leading-tight">
-                Hon. Ereman ToBaining Jr., MP
-            </h1>
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 max-w-4xl mx-auto">
-                Investing in Digital Education: Providing Ready-to-Use Laptops for Kokopo District Schools
-            </h2>
-            <div class="mt-8">
-                <p class="text-gray-600 italic">"Empowering the next generation of Kokopo leaders through access to reliable technology."</p>
-            </div>
-        </section>
+        <!-- Combined Hero & Rationale Layout based on Mockup (Two-Column Structure) -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-16">
 
-        <!-- Investment Rationale -->
-        <section id="investment" class="mb-16 scroll-mt-20">
-            <h3 class="section-header">1. The Strategic Educational Investment</h3>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 bg-white rounded-xl shadow-md border-t-4 border-blue-600">
-                    <div class="text-4xl mb-3">🎓</div>
-                    <h4 class="text-xl font-bold mb-2 text-gray-900">Direct Community Impact</h4>
-                    <p class="text-gray-600">Equip students with the necessary tools for modern education, enhancing digital literacy across the district.</p>
+            <!-- Left Column: Formal Address / Hero (Dark Blue Background) -->
+            <section class="primary-dark text-white p-10 md:p-12 rounded-xl shadow-2xl relative overflow-hidden">
+                <p class="text-lg text-blue-300 mb-4 font-light">A Strategic Proposal to</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                    Hon. Ereman ToBaining Jr., MP
+                </h1>
+                <h2 class="text-xl md:text-2xl font-semibold text-blue-100 max-w-full mb-8">
+                    Investing in Digital Education: Providing Ready-to-Use Laptops for Kokopo District Schools
+                </h2>
+                <div class="mt-8">
+                    <p class="text-blue-200 italic border-l-4 border-blue-500 pl-4 py-1">
+                        "Empowering the next generation of Kokopo leaders through access to reliable technology."
+                    </p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-md border-t-4 border-blue-600">
-                    <div class="text-4xl mb-3">💰</div>
-                    <h4 class="text-xl font-bold mb-2 text-gray-900">Maximum Resource Allocation</h4>
-                    <p class="text-gray-600">Our direct-supply model ensures every Kina allocated goes further, maximizing the number of donated units.</p>
+                <!-- Decorative element (Triangle down) from the mockup -->
+                <div class="triangle-down"></div>
+            </section>
+
+            <!-- Right Column: Investment Rationale (White/Light Background) -->
+            <section id="investment" class="bg-white p-10 md:p-12 rounded-xl shadow-xl scroll-mt-20">
+                <h3 class="text-3xl font-extrabold text-gray-900 mb-6">Investment Rationale</h3>
+                <div class="space-y-6">
+                    <!-- Feature 1 -->
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 p-3 rounded-full bg-blue-100 accent-blue flex-shrink-0">🎓</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1 text-gray-900">Direct Community Impact</h4>
+                            <p class="text-gray-600">Equip students with the necessary tools for modern education, enhancing digital literacy across the district.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 p-3 rounded-full bg-blue-100 accent-blue flex-shrink-0">💰</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1 text-gray-900">Maximum Resource Allocation</h4>
+                            <p class="text-gray-600">Our direct-supply model ensures every Kina allocated goes further, maximizing the number of donated units.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex items-start">
+                        <div class="text-3xl mr-4 p-3 rounded-full bg-blue-100 accent-blue flex-shrink-0">🛠️</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1 text-gray-900">Ready-to-Deploy Solution</h4>
+                            <p class="text-gray-600">Laptops come pre-configured with Windows 11 Pro and essential software, requiring zero setup by school staff.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-md border-t-4 border-blue-600">
-                    <div class="text-4xl mb-3">🛠️</div>
-                    <h4 class="text-xl font-bold mb-2 text-gray-900">Ready-to-Deploy Solution</h4>
-                    <p class="text-gray-600">Laptops come pre-configured with Windows 11 Pro and essential software, requiring zero setup by school staff.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Custom Branding & Recognition (Key Selling Point) -->
         <section id="branding" class="mb-16 scroll-mt-20">
             <h3 class="section-header">2. Custom Branding for District Recognition</h3>
-            <div class="bg-blue-50 p-8 rounded-xl shadow-lg border border-blue-200">
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-blue-200">
                 <p class="text-lg text-gray-700 mb-6">
                     This initiative offers a unique opportunity for **The Kokopo District** and **Hon. Ereman ToBaining Jr., MP** to secure visible and lasting recognition for this generous investment in education. We offer two key customization services, ensuring every donated laptop serves as a testament to your commitment to the community:
                 </p>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="p-6 bg-white rounded-lg shadow-inner">
+                    <!-- Laser Engraving - Updated to use accent blue border/color -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-inner border-l-4 border-red-600">
                         <div class="flex items-center mb-3">
                             <div class="text-3xl mr-3 text-red-600">🖊️</div>
                             <h4 class="text-xl font-bold text-gray-900">Laser Engraving on Casing</h4>
@@ -88,7 +142,8 @@
                             We can laser-engrave the laptop lid with the **Kokopo District logo, the MP's name, or a dedication message**. This durable, professional branding ensures permanent recognition of the source of the donation.
                         </p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-inner">
+                    <!-- Custom Boot-Up Logo - Updated to use accent blue border/color -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-inner border-l-4 border-green-600">
                         <div class="flex items-center mb-3">
                             <div class="text-3xl mr-3 text-green-600">🖥️</div>
                             <h4 class="text-xl font-bold text-gray-900">Custom Boot-Up Logo</h4>
@@ -104,9 +159,9 @@
         <!-- Product Details Section -->
         <section id="specs" class="mb-16 scroll-mt-20">
             <h3 class="section-header">3. The NBZ Tech Laptop: Ideal for Education</h3>
-            <div class="bg-white p-8 rounded-xl shadow-lg grid md:grid-cols-2 gap-10 items-start">
+            <div class="bg-white p-8 rounded-xl shadow-lg grid md:grid-cols-2 gap-10 items-start border-t-4 border-blue-600">
                 <div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-4">NBZ Tech 14-inch Notebook</h4>
+                    <h4 class="text-2xl font-bold text-blue-700 mb-4">NBZ Tech 14-inch Notebook</h4>
                     <p class="text-gray-700 mb-6">
                         This is the essential, cost-effective model, perfectly configured for educational environments, administrative tasks, and digital learning programs.
                     </p>
@@ -129,13 +184,13 @@
         </section>
 
         <!-- Conclusion and Call to Action -->
-        <section id="contact" class="text-center bg-blue-800 text-white p-12 rounded-xl shadow-2xl scroll-mt-20">
+        <section id="contact" class="text-center primary-dark text-white p-12 rounded-xl shadow-2xl scroll-mt-20">
             <h3 class="text-3xl font-bold mb-4">Next Steps: Secure Your Educational Order</h3>
-            <p class="max-w-4xl mx-auto mb-8 text-lg">
+            <p class="max-w-4xl mx-auto mb-8 text-lg text-blue-100">
                 NBZ Tech is ready to move immediately on this proposal. By partnering directly with us, **Hon. Ereman ToBaining Jr., MP**, your investment will have the maximum possible impact on the schools and youth of the Kokopo District. We guarantee the highest quality product delivered in a fully customized and ready-to-use state.
             </p>
             <div class="bg-white text-gray-800 rounded-lg p-6 max-w-lg mx-auto shadow-xl">
-                <h4 class="text-xl font-bold mb-3">We look forward to meeting with your office to discuss a formal order.</h4>
+                <h4 class="text-xl font-bold mb-3 text-blue-700">We look forward to meeting with your office to discuss a formal order.</h4>
                 <div class="grid grid-cols-2 gap-4 mt-4">
                     <div class="text-left">
                         <p class="font-bold">Contact Person:</p>
@@ -155,7 +210,8 @@
 
     </main>
 
-    <footer class="bg-gray-900 text-white py-6">
+    <!-- Footer: Match the dark color scheme -->
+    <footer class="primary-dark text-white py-6 mt-12">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 NBZ Tech / Niugini Open Biz. All rights reserved. Proposal for Kokopo District.</p>
         </div>
